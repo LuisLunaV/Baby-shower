@@ -1,0 +1,50 @@
+.ocultar{
+    opacity: 0 !important;
+  }
+  
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    height: 100vh;
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 3s ease-in-out;
+    background-color: #fff;
+  }
+  
+  .star {
+    opacity: 0;
+    fill: #f8de7e;
+    animation: loader 2s infinite alternate;
+  }
+  .star2 {
+    height: 5rem;
+    margin-left: -10px;
+    animation-delay: 0.25s;
+  }
+  
+  .star3 {
+    height: 2rem;
+    margin-left: -15px;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes loader {
+    0% {
+      opacity: 0;
+      transform: translateY(0) translateX(50px) rotate (0deg);
+    }
+    10% {
+      opacity: 0;
+      transform: translateY(0) translateX(50px) rotate(0deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(-20px) translateX(0) rotate(360deg);
+    }
+  }
+  
