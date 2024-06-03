@@ -1,6 +1,4 @@
-const express = require('express');
-const app = express();
-const port = '8080';
-app.listen(port, ()=>{
-    console.log('servidor levantado: '+ port);
-});
+const { Server } = require('./model/server.js');
+
+const server = new Server();
+server.listen();
