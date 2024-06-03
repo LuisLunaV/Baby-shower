@@ -3,7 +3,7 @@ const express = require('express');
 class Server{
     constructor(){
         this.app = express();
-        this.port = '8080';
+        this.port = process.env.PORT || "8080";
        
         this.path = {
             usuarios:'api/v1/usuarios'
