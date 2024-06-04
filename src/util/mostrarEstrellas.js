@@ -1,11 +1,13 @@
 import { contador } from '../function/contador.js';
 
-const divContainerStarsBoy  =  document.querySelector('#div-cont-boy'),
+
+export const mostrarEstrellas =( id )=>{
+  const divContainerStarsBoy  =  document.querySelector('#div-cont-boy'),
       divContainerStarsGirl =  document.querySelector('#div-cont-girl');
 
 const boyImgs = divContainerStarsBoy.querySelectorAll('.img-rotate'),
       girlImgs = divContainerStarsGirl.querySelectorAll('.img-rotate');  
-export const mostrarEstrellas =( id )=>{
+      
   if( id === 'button-boy'){
     agregarEfecto( boyImgs )
     contador('boy')
