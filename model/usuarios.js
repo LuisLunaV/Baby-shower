@@ -12,7 +12,7 @@ const Usuario = db.define('Usuarios', {
         type: DataTypes.STRING,
         require: [true, 'El nombre del usuario es obligatorio'],
     }
-   
+
 }, {
     tableName: 'Usuarios',
     timestamps: false // Impide la creacion automatica de 'createdAt', 'updatedAt'

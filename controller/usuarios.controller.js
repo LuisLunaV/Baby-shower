@@ -13,8 +13,8 @@ const usuarios = {
             await usuario.save();
 
            return res.status(200).json({
-            msg: 'agregar resgitro',
-            usuario
+            usuario,
+            registro: true
             })
         } catch (error) {
             return res.status(500).json({
