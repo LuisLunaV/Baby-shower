@@ -1,4 +1,5 @@
 const express = require('express');
+const { dbConnection } = require('../database/config.db.js');
 
 class Server{
     constructor(){
@@ -6,11 +7,17 @@ class Server{
         this.port = process.env.PORT || "8080";
        
         this.path = {
-            usuarios:'api/v1/usuarios'
+            usuarios:'/api/v1/usuarios'
         };
 
+        this.connectDB();
         this.middleware();
+        this.router();
     }
+
+    async connectDB() {
+        await dbConnection();
+      }
 
     middleware(){
         this.app.use(express.json());
@@ -20,7 +27,7 @@ class Server{
     }
 
     router(){
-        this.app.use( this.path.usuarios,require())
+        this.app.use( this.path.usuarios, require('../router/usuarios.routes.js'));
     }
 
     listen(){

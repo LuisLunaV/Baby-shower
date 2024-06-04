@@ -1,10 +1,20 @@
 const { request, response } = require('express');
+const { Usuario } = require('../model/usuarios');
+
 const usuarios = {
-    agregarUsuario:(req = request, res = response)=>{
+    agregarUsuario: async(req = request, res = response)=>{
         try {
-            const usuario = req.body;
+            const { body } = req;
+            const { Usuario_Name } = body;
+            const usuario = new Usuario({ Usuario_Name });
+
+            usuario.Usuario_Name = Usuario_Name.toUpperCase();
+
+            await usuario.save();
+
            return res.status(200).json({
-            msg: 'agregar resgitro'
+            msg: 'agregar resgitro',
+            usuario
             })
         } catch (error) {
             return res.status(500).json({
@@ -14,11 +24,11 @@ const usuarios = {
         }
     },
 
-    guardarVotoDelUsuario: ()=>{
+    guardarVotoDelUsuario: ( req = request, res = response )=>{
 
     },
 
-    mostrarVotoPorUsuario:()=>{
+    mostrarVotoPorUsuario:( req = request, res = response )=>{
         
     }
 }
