@@ -24,11 +24,10 @@ const postVotos = async (data) => {
 
   const getVotos = async(  )=>{
     try {
-        const resp = await fetch(`${ url }${ apiVotos }${contar}`);
+        const resp = await fetch(`${ url }${ apiVotos }${'contar'}`);
        
         if ( resp.ok ) {
             const data = await resp.json();
-
             return data;
  
         } else{

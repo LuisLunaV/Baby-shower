@@ -1,11 +1,12 @@
+import { enviarVoto } from '../helper/enviar-voto.js';
 export const seleccionarVoto =( id )=>{
-    const data = JSON.parse(localStorage.getItem('usuario'));
+    const {usuario:{ Usuario_ID }} = JSON.parse(localStorage.getItem('usuario'));
     if( id === 'button-boy'){
-     console.log(data)
+     enviarVoto(Usuario_ID,'nino')
       }
     
       if( id === 'button-girl'){
-     console.log(data)
+        enviarVoto(Usuario_ID,'nina')
        
       }
 }
