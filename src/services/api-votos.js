@@ -1,4 +1,4 @@
-const url = 'https://baby-shower-production-7994.up.railway.app';
+const url = 'https://baby-shower-production-7463.up.railway.app';
 // const url = "http://localhost:8080";
 const apiVotos = '/api/v1/votos/';
 const postVotos = async (data) => {
