@@ -1,31 +1,27 @@
-import {  detectarVoto } from '../events/buttons.js';
-import { validarRegistro } from '../helper/validar-session.js';
-import { guardarNombreUsuario } from '../helper/enviar-registro.js';
+import { detectarVoto } from "../events/buttons.js";
+import { validarRegistro } from "../helper/validar-session.js";
+import { guardarNombreUsuario } from "../helper/enviar-registro.js";
 
-import { loadedComponents } from '../util/loader.js';
-import { obtenerVotos } from '../components/contadores.js';
+import { loadedComponents } from "../util/loader.js";
+import { obtenerVotos } from "../components/contadores.js";
 
-export const init=()=>{
-    const nameWindow = window.location.pathname;
-console.log(nameWindow)
+export const init = () => {
+  const nameWindow = window.location.pathname;
 
-    if( nameWindow === '/'){
-          
-console.log('prueba')
-console.log(nameWindow)
-        return;
-     }
-        if( nameWindow === '/html/registro.html'){
-          
-           guardarNombreUsuario();
-           return;
-        }
-        if( nameWindow === '/index.html'){
-            
-            validarRegistro();
-            loadedComponents();
-            obtenerVotos();
-            detectarVoto();
-            return;
-        }
-}
+  if (nameWindow === "/") {
+    window.location.replace("/html/registro.html");
+
+    return;
+  }
+  if (nameWindow === "/html/registro.html") {
+    guardarNombreUsuario();
+    return;
+  }
+  if (nameWindow === "/index.html") {
+    validarRegistro();
+    loadedComponents();
+    obtenerVotos();
+    detectarVoto();
+    return;
+  }
+};
