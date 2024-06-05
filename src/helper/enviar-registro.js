@@ -1,15 +1,28 @@
-export const guardarNombreUsuario=()=>{
-    const registroTxT = document.querySelector('#typewriter-input');
+// js: index.js
+import { postRegistro } from '../services/api-post.js';
 
-registroTxT.addEventListener('keydown',(e)=>{
-    e.preventDefault();
-console.log('saludos')
-    // const nombre = e.target.value;
+export const guardarNombreUsuario = () => {
+    const form = document.querySelector('#register-form');
 
-    // localStorage.setItem('usuario',JSON.stringify( nombre ))
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const registroTxT = document.querySelector('#typewriter-input');
+        const nombre = registroTxT.value;
+        console.log(nombre);
 
-    // setTimeout(()=>{
-    //     window.location.replace('../index.html');
-    // },2000)
-});
+        try {
+            const resp = await postRegistro({
+                "Usuario_Name": nombre
+            });
+
+            localStorage.setItem('usuario', JSON.stringify(resp));
+
+            window.location.replace('../index.html');
+            // setTimeout(() => {
+            // }, 2000);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
 }
+

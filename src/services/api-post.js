@@ -1,6 +1,7 @@
-const url = 'https://baby-shower-production-7994.up.railway.app';
+// const url = 'https://baby-shower-production-7994.up.railway.app';
+const url = "http://localhost:8080";
 const apiPost = '/api/v1/usuarios/agregar';
-const postAuthentication = async (data) => {
+const postRegistro = async (data) => {
     try {
       const resp = await fetch(`${url}${apiPost}`, {
         method: "POST",
@@ -23,5 +24,5 @@ const postAuthentication = async (data) => {
   };
 
   export{
-    postAuthentication
+    postRegistro
   }

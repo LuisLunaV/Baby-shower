@@ -1,8 +1,9 @@
 const validarRegistro =()=>{
-    const usuario = sessionStorage.getItem('usuario');
+    const usuario = localStorage.getItem('usuario');
 
     if( !usuario ){
         window.location.replace('/html/registro.html');
+        return;
     }
 };
 

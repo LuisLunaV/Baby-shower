@@ -5,6 +5,7 @@ const usuarios = {
     agregarUsuario: async(req = request, res = response)=>{
         try {
             const { body } = req;
+            console.log(body)
             const { Usuario_Name } = body;
             const usuario = new Usuario({ Usuario_Name });
 
