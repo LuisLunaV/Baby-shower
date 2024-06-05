@@ -7,16 +7,24 @@ import { obtenerVotos } from '../components/contadores.js';
 
 export const init=()=>{
     const nameWindow = window.location.pathname;
+console.log(nameWindow)
+
+    if( nameWindow === '/'){
+          
+console.log('prueba')
+console.log(nameWindow)
+        return;
+     }
         if( nameWindow === '/html/registro.html'){
-            console.log(nameWindow)
+          
            guardarNombreUsuario();
            return;
         }
         if( nameWindow === '/index.html'){
-            obtenerVotos();
-    
+            
             validarRegistro();
             loadedComponents();
+            obtenerVotos();
             detectarVoto();
             return;
         }
