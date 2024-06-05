@@ -1,11 +1,11 @@
 const { request, response } = require('express');
-const { Usuario } = require('../model/usuarios');
+const { Usuario } = require('../model/usuarios.js');
 
 const usuarios = {
-    agregarUsuario: async(req = request, res = response)=>{
+    agregarUsuario: async(req = request, res = response) => {
         try {
             const { body } = req;
-            console.log(body)
+            console.log(body);
             const { Usuario_Name } = body;
             const usuario = new Usuario({ Usuario_Name });
 
@@ -13,25 +13,18 @@ const usuarios = {
 
             await usuario.save();
 
-           return res.status(200).json({
-            usuario,
-            registro: true
-            })
+            return res.status(200).json({
+                usuario,
+                registro: true
+            });
         } catch (error) {
             return res.status(500).json({
                 error,
                 msg: "Hubo un error en el servidor",
-              });
+            });
         }
-    },
-
-    guardarVotoDelUsuario: ( req = request, res = response )=>{
-
-    },
-
-    mostrarVotoPorUsuario:( req = request, res = response )=>{
-        
     }
+
 }
 
 module.exports = usuarios;

@@ -7,7 +7,8 @@ class Server{
         this.port = process.env.PORT || "8080";
        
         this.path = {
-            usuarios:'/api/v1/usuarios'
+            usuarios:'/api/v1/usuarios',
+            voto: '/api/v1/votos'
         };
 
         this.connectDB();
@@ -28,6 +29,8 @@ class Server{
 
     router(){
         this.app.use( this.path.usuarios, require('../router/usuarios.routes.js'));
+        this.app.use( this.path.voto, require('../router/votos.routes.js'));
+
     }
 
     listen(){
