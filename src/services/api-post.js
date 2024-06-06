@@ -1,4 +1,6 @@
 const url = 'https://baby-shower-production-7463.up.railway.app';
+// const url = "http://192.168.100.11:8080";
+
 const apiPost = '/api/v1/usuarios/agregar';
 const postRegistro = async (data) => {
     try {

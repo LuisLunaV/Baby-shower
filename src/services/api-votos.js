@@ -1,5 +1,5 @@
 const url = 'https://baby-shower-production-7463.up.railway.app';
-// const url = "http://localhost:8080";
+// const url = "http://192.168.100.11:8080";
 const apiVotos = '/api/v1/votos/';
 const postVotos = async (data) => {
     try {

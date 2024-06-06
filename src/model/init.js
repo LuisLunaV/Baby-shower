@@ -10,7 +10,7 @@ export const init = () => {
 
   if (nameWindow === "/") {
     window.location.replace("/html/registro.html");
-
+    
     return;
   }
   if (nameWindow === "/html/registro.html") {
