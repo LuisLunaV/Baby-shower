@@ -10,11 +10,13 @@
 }
 @font-face {
   font-family: "gotams-medium";
-  src: url(../assets/Tipografías/GOTHAM\ SSM/GothamSSm-Medium.otf) format("truetype");
+  src: url(../assets/Tipografías/GOTHAM\ SSM/GothamSSm-Medium.otf)
+    format("truetype");
 }
 @font-face {
   font-family: "gotams-mediumUno";
-  src: url(../assets/Tipografías/GOTHAM\ SSM/GothamSSm-MediumUno.otf) format("truetype");
+  src: url(../assets/Tipografías/GOTHAM\ SSM/GothamSSm-MediumUno.otf)
+    format("truetype");
 }
 
 html {
@@ -69,9 +71,12 @@ body {
   width: 1px; /* Ancho de la línea */
   transform: translateX(-50%);
 }
+.img-oso {
+  z-index: 0;
+  position: absolute;
+}
 
 .div-title {
-  background-image: url("../assets/images/marco001@4x.png");
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
@@ -107,27 +112,41 @@ body {
   .container {
     background-size: cover;
   }
-  .div-sub-container{
-  justify-content: space-evenly;
+  .div-sub-container {
+    justify-content: space-evenly;
   }
-  .div-title{
-  background-size: 15rem;
-
+  .img-oso {
+    opacity: 1;
+    max-width: 12rem;
+    max-height: 20rem;
+    
+  }
+  #img-oso-boy{
+    top: 2rem;
+    left:2rem;
+  }
+  #img-oso-girl{
+    top: 2rem;
+    right:2rem;
+  }
+  .div-title {
+    /* opacity: 0; */
+    background-size: 15rem;
     bottom: 72%;
     left: 53%;
   }
 
   .div-title h1 {
+    opacity: 0;
     margin: 0;
     font-size: 3rem;
   }
 
-  .img-nuve{
+  .img-nuve {
     width: 17rem;
     height: 10rem;
-    
   }
-  .img-fugas{
+  .img-fugas {
     opacity: 0;
   }
   #typewriter-input {
@@ -144,11 +163,16 @@ body {
   .container {
     background-size: cover;
   }
-  .div-sub-container{
+  .div-sub-container {
     justify-content: space-between;
-    }
+  }
+  .img-oso {
+    opacity: 0;
+  }
   .div-title {
-  background-size: contain;
+  background-image: url("../assets/images/marco001@4x.png");
+
+    background-size: contain;
 
     bottom: 79%;
     left: 53%;
@@ -172,11 +196,16 @@ body {
   .container {
     background-size: cover;
   }
-  .div-sub-container{
+  .div-sub-container {
     justify-content: space-between;
-    }
+  }
+  .img-oso {
+    opacity: 0;
+  }
   .div-title {
-  background-size: contain;
+  background-image: url("../assets/images/marco001@4x.png");
+
+    background-size: contain;
 
     bottom: 79%;
     left: 53%;
@@ -200,18 +229,25 @@ body {
   .container {
     background-size: cover;
   }
-  .div-sub-container{
+  .div-sub-container {
     justify-content: space-between;
-    }
+  }
+
+  .img-oso {
+    opacity: 0;
+  }
+
   .div-title {
-  background-size: contain;
+  background-image: url("../assets/images/marco001@4x.png");
+
+    background-size: contain;
 
     bottom: 86%;
     left: 53%;
   }
 
   .div-title h1 {
-    font-size: 6rem;
+    font-size: 8rem;
   }
 
   #typewriter-input {
