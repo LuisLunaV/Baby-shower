@@ -1,39 +1,168 @@
 /* Estilos generales */
+.container-register{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/Fondo/Fondo_video.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Asegura que no haya overflow */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+/* justify-content: space-evenly; */
+  padding-top: 5%;
+
+}
+#marco-register{
+  z-index: 0;
+  width: 50%;
+}
 .div-title-baby {
-  z-index: 1;
   position: absolute;
-  transform: translateX(-50%);
-  text-align: center;
-  bottom: 86%;
-  left: 53%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+#marco-title-register{
+  z-index: 0;
+}
 .div-title-baby h1 {
+  position: absolute;
+  z-index: 1;
   color: #fff;
-  font-size: 7rem;
   font-family: "babys-cursive", sans-serif;
   letter-spacing: 0.4rem;
   margin: 0;
 }
 
 .element-register {
-  z-index: 1;
   position: absolute;
+
+  z-index: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
-  left: 2%;
-  bottom: 50%;
+  height: 100%;
 }
 
-.container-register img {
-  z-index: 0;
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
+#register-form{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+#div-button-vota{
+  overflow: hidden;
+  max-height: 10rem;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#img-corazones-button{
+  z-index: 0;
+}
+
+#button-vota{
+  position: absolute;
+  z-index: 1;
+  /* height: 20%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 25px 20px 22px;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #e8e8e8;
+  border-color: #ffe2e2;
+  border-style: solid;
+  border-width: 9px;
+  border-radius: 35px;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 900;
+  color: rgb(134, 124, 124);
+  font-family: monospace;
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.27, 2.5),
+    border-color 400ms ease-in-out, background-color 400ms ease-in-out;
+  word-spacing: -2px;
+
+}
+@keyframes movingBorders {
+  0% {
+    border-color: #fce4e4;
+  }
+
+  50% {
+    border-color: #ffd8d8;
+  }
+
+  90% {
+    border-color: #fce4e4;
+  }
+}
+
+#button-vota:hover {
+  background-color: #eee;
+  transform: scale(105%);
+  animation: movingBorders 3s infinite;
+}
+
+#button-vota svg {
+  margin-right: 1.1rem;
+  fill: rgb(255, 110, 110);
+  transition: opacity 100ms ease-in-out;
+}
+
+.filled {
+  position: absolute;
+  opacity: 0;
+  top: 20px;
+  left: 22px;
+  /* top: 2.5rem;
+  left: 7.5rem; */
+}
+
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.15);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+#button-vota:hover .empty {
+  opacity: 0;
+}
+
+#button-vota:hover .filled {
+  opacity: 1;
+  animation: beatingHeart 1.2s infinite;
+}
+
 
 #typewriter-input {
   margin-top: 1rem;
@@ -57,19 +186,35 @@
   font-size: 3rem;
 }
 
+
 /* Resolución para dispositivos móviles muy pequeños */
 @media (max-width: 575px) {
   .div-title-baby {
-    bottom: 65%;
-    left: 53%;
-    width: 80%;
+    bottom: 70%;
+    width: 90%;
   }
 
   .div-title-baby h1 {
-    font-size: 3rem;
+    font-size: 4rem;
+  }
+  #marco-register{
+    width: 98%;
+    margin-top: 16rem;
+  }
+  #register-form{
+    width: 100%;
+    justify-content: center;
+    gap: 5rem;
+  }
+  #img-corazones-button{
+    width: 95% !important;
+  }
+  #div-button-vota{
+    width: 100%;
   }
 
   #typewriter-input {
+    width: 80%;
     font-size: 1.5rem;
   }
 
@@ -81,15 +226,25 @@
 /* Resolución para dispositivos móviles pequeños */
 @media (min-width: 576px) and (max-width: 767px) {
   .div-title-baby {
-    bottom: 79%;
-    left: 53%;
+    max-width: 80%;
+    bottom: 85%;
   }
 
   .div-title-baby h1 {
-    font-size: 4rem;
+    font-size: 7rem;
+  }
+  #marco-register{
+    width: 99%;
+  }
+  #register-form{
+    width: 100%;
+    /* margin: auto 0; */
+    justify-content:center;
+    gap: 5rem;
   }
 
   #typewriter-input {
+    width: 70%;
     font-size: 2rem;
   }
 
@@ -101,12 +256,24 @@
 /* Resolución para tablets */
 @media (min-width: 768px) and (max-width: 991px) {
   .div-title-baby {
-    bottom: 74%;
-    left: 53%;
+    max-width: 70%;
+    bottom: 80%;
+  }
+
+  .div-title-baby h1 {
+    font-size: 8rem;
+  }
+  #marco-register{
+    width: 75%;
   }
 
   .div-title-baby h1 {
     font-size: 6rem;
+  }
+
+  #register-form{
+    justify-content: space-evenly;
+    gap: 2rem;
   }
 
   #typewriter-input {
@@ -119,17 +286,26 @@
 }
 
 /* Resolución para PC de escritorio */
-@media (min-width: 972px) {
+@media (min-width: 991px) {
   .div-title-baby {
-    bottom: 86%;
-    left: 53%;
+  max-width: 50%;
+    bottom: 75%;
+    /* left: 53%; */
+  }
+#button-vota{
+  width: 15%;
+}
+  #register-form{
+    justify-content: center;
+    gap: 10rem;
   }
 
   .div-title-baby h1 {
-    font-size: 6rem;
+    font-size: 7rem;
   }
 
   #typewriter-input {
+    width: 70%;
     font-size: 2.5rem;
   }
 
