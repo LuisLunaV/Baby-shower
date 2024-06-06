@@ -14,6 +14,7 @@ export const init = () => {
     return;
   }
   if (nameWindow === "/html/registro.html") {
+    loadedComponents();
     guardarNombreUsuario();
     return;
   }
