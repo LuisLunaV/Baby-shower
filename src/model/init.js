@@ -4,7 +4,6 @@ import { guardarNombreUsuario } from "../helper/enviar-registro.js";
 
 import { loadedComponents } from "../util/loader.js";
 import { obtenerVotos } from "../components/contadores.js";
-
 export const init = () => {
   const nameWindow = window.location.pathname;
 

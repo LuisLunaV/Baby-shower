@@ -8,8 +8,9 @@ export const guardarNombreUsuario = () => {
         e.preventDefault();
         const registroTxT = document.querySelector('#typewriter-input');
         const nombre = registroTxT.value;
-        console.log(nombre);
-
+        
+        if(nombre === '')return;
+        
         try {
             const resp = await postRegistro({
                 "Usuario_Name": nombre

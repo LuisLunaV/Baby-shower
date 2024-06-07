@@ -1,5 +1,5 @@
 import { contador } from '../function/contador.js';
-
+import { votoRealizado } from '../util/bloquear-voto.js';
 
 export const mostrarEstrellas =( id )=>{
   const divContainerStarsBoy  =  document.querySelector('#div-cont-boy'),
@@ -9,12 +9,15 @@ const boyImgs = divContainerStarsBoy.querySelectorAll('.img-rotate'),
       girlImgs = divContainerStarsGirl.querySelectorAll('.img-rotate');  
       
   if( id === 'button-boy'){
+
+    if( votoRealizado() )return;
     agregarEfecto( boyImgs )
     contador('boy')
     return;
   }
 
   if( id === 'button-girl'){
+    if( votoRealizado() )return;
     agregarEfecto( girlImgs )
     contador('girl')
     return;
