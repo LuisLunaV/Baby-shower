@@ -13,6 +13,11 @@ export const init = () => {
     return;
   }
   if (nameWindow === "/html/registro.html") {
+    const voto = JSON.parse(localStorage.getItem('voto'));
+    if (voto) {
+      window.location.replace('/index.html')
+      return;
+  }
     loadedComponents();
     guardarNombreUsuario();
     return;
