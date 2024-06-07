@@ -12,6 +12,7 @@ export const votoRealizado = () => {
       
       if (usuario.Usuario_ID === voto.Usuario_ID) return true;
       return false;
+      
     } catch (error) {
       console.error('Error al recuperar o parsear datos de localStorage:', error);
       return false;
